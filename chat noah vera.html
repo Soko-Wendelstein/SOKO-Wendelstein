@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat Noah & Vera</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#111b21; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; display:flex; justify-content:center; padding:20px 0; }
+.phone { width:380px; background:#111b21; border-radius:12px; overflow:hidden; }
+.wa-header { background:#1f2c34; padding:12px 16px; display:flex; align-items:center; gap:10px; border-bottom:1px solid #2a3942; }
+.wa-avatar { width:40px; height:40px; border-radius:50%; background:#2a3942; display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:700; color:#8696a0; flex-shrink:0; }
+.wa-name { font-size:15px; font-weight:600; color:#e9edef; }
+.wa-status { font-size:12px; color:#8696a0; }
+.chat-body { padding:10px 12px; }
+.date-divider { text-align:center; margin:14px 0 8px; }
+.date-divider span { background:#1f2c34; color:#8696a0; font-size:11.5px; padding:4px 10px; border-radius:8px; }
+.msg { display:flex; margin-bottom:3px; }
+.msg.me { justify-content:flex-end; }
+.msg.them { justify-content:flex-start; }
+.bubble { max-width:290px; padding:7px 10px 18px; border-radius:8px; font-size:14px; line-height:1.45; position:relative; color:#e9edef; }
+.msg.them .bubble { background:#1f2c34; border-radius:0 8px 8px 8px; }
+.msg.me .bubble { background:#005c4b; border-radius:8px 0 8px 8px; }
+.time-stamp { font-size:10.5px; color:#8696a0; position:absolute; bottom:4px; right:8px; white-space:nowrap; }
+.msg.me .time-stamp::after { content:' ✓✓'; color:#53bdeb; }
+.seen { text-align:right; font-size:11px; color:#8696a0; margin:-2px 4px 6px; }
+.sys-msg { text-align:center; background:#1f2c34; color:#8696a0; font-size:12px; padding:8px 14px; border-radius:8px; margin:14px 0; }
+.input-bar { background:#1f2c34; padding:10px 12px; display:flex; align-items:center; gap:10px; border-radius:0 0 12px 12px; }
+.input-field { flex:1; background:#2a3942; border:none; border-radius:20px; padding:9px 14px; color:#8696a0; font-size:14px; font-family:inherit; }
+.send-btn { width:40px; height:40px; background:#00a884; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:18px; border:none; }
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="wa-header">
+    <div class="wa-avatar">N</div>
+    <div>
+      <div class="wa-name">Noah</div>
+      <div class="wa-status">zuletzt online heute</div>
+    </div>
+  </div>
+  <div class="chat-body">
+
+    <div class="date-divider"><span>Montag, 2. Oktober 2023</span></div>
+    <div class="msg them">
+      <div class="bubble">Guten Morgen Frau Caralis. Ich bin Noah Lopez, Mila hat mir Ihre Nummer gegeben. Ich wäre ab nächster Woche verfügbar als Fahrer.<div class="time-stamp">08:02</div></div>
+    </div>
+    <div class="msg me">
+      <div class="bubble">Hallo Noah. Gut. Montag 7:45 Uhr, Hinrichsegen. Adresse schicke ich Ihnen noch.<div class="time-stamp">08:21</div></div>
+    </div>
+    <div class="msg them">
+      <div class="bubble">Perfekt. Bis Montag.<div class="time-stamp">08:23</div></div>
+    </div>
+
+    <div class="date-divider"><span>Freitag, 3. November 2023</span></div>
+    <div class="msg them">
+      <div class="bubble">Frau Caralis, morgen früh — soll ich Sie zum Flughafen bringen oder nehmen Sie den Zug?<div class="time-stamp">18:44</div></div>
+    </div>
+    <div class="msg me">
+      <div class="bubble">Flughafen bitte. 5:30 Uhr. Tut mir leid für die frühe Zeit.<div class="time-stamp">18:52</div></div>
+    </div>
+    <div class="msg them">
+      <div class="bubble">Kein Problem, das ist mein Job. Gute Reise dann.<div class="time-stamp">18:54</div></div>
+    </div>
+
+    <div class="date-divider"><span>Samstag, 23. Dezember 2023</span></div>
+    <div class="msg me">
+      <div class="bubble">Noah, frohe Weihnachten. Danke für die letzten Monate — Sie sind sehr zuverlässig. Das schätze ich.<div class="time-stamp">11:02</div></div>
+    </div>
+    <div class="msg them">
+      <div class="bubble">Danke Frau Caralis. Frohe Weihnachten auch Ihnen und Ihrer Familie.<div class="time-stamp">11:18</div></div>
+    </div>
+    <div class="msg me">
+      <div class="bubble">Noah — ich hab Ihnen gesagt, Sie können Vera sagen. 😊<div class="time-stamp">11:21</div></div>
+    </div>
+    <div class="msg them">
+      <div class="bubble">Stimmt. Frohe Weihnachten, Vera. 🎄<div class="time-stamp">11:24</div></div>
+    </div>
+
+    <div class="date-divider"><span>Donnerstag, 15. Februar 2024</span></div>
+    <div class="msg them">
+      <div class="bubble">Vera, ich wollte mich kurz bedanken. Für das Gespräch heute im Auto. Das war... ich weiß nicht, anders als sonst.<div class="time-stamp">22:11</div></div>
+    </div>
+    <div class="msg me">
+      <div class="bubble">Du bist leicht zu unterhalten, Noah. Das passiert selten. 🙂<div class="time-stamp">22:28</div></div>
+    </div>
+    <div class="msg them">
+      <div class="bubble">Das nehme ich als Kompliment 😄<div class="time-stamp">22:30</div></div>
+    </div>
+
+    <div class="date-divider"><span>Freitag, 22. März 2024</span></div>
+    <div class="msg them">
+      <div class="bubble">Bist du gut angekommen in Naxos?<div class="time-stamp">20:14</div></div>
+    </div>
+    <div class="msg me">
+      <div class="bubble">Ja, gerade eingetroffen. Hitze, Chaos, eine Ziege in der Küche — alles wie immer 😄<div class="time-stamp">20:31</div></div>
+    </div>
+    <div class="msg them">
+      <div class="bubble">Klingt nach deinem Leben 😄 Ich vermiss... also, ich mein — die Fahrten sind ruhiger ohne dich.<div class="time-stamp">20:34</div></div>
+    </div>
+    <div class="msg me">
+      <div class="bubble">Das glaub ich dir. 😊 Bis nächste Woche.<div class="time-stamp">20:48</div></div>
+    </div>
+
+    <div class="date-divider"><span>Samstag, 4. Mai 2024</span></div>
+    <div class="msg them">
+      <div class="bubble">Vera. Ich weiß nicht ob ich das schreiben soll. Aber ich denk die ganze Zeit an letzten Freitag.<div class="time-stamp">23:02</div></div>
+    </div>
+    <div class="msg me">
+      <div class="bubble">Noah. Was zwischen uns war, war schön. Aber du weißt wie das ist. Ich bin verheiratet.<div class="time-stamp">23:19</div></div>
+    </div>
+    <div class="msg them">
+      <div class="bubble">Ich weiß. Ich weiß das alles. Aber ich kann nicht einfach so tun als wär nichts.<div class="time-stamp">23:21</div></div>
+    </div>
+    <div class="msg me">
+      <div class="bubble">Das musst du auch nicht. Aber wir müssen vernünftig bleiben. Du bist wichtig für mich — das meine ich ernst. Lass uns das nicht komplizieren.<div class="time-stamp">23:33</div></div>
+    </div>
+    <div class="msg them">
+      <div class="bubble">Das klingt so kalt.<div class="time-stamp">23:35</div></div>
+    </div>
+    <div class="msg me">
+      <div class="bubble">Ist es nicht. Gute Nacht Noah. 🤍<div class="time-stamp">23:41</div></div>
+    </div>
+    <div class="seen">Gesehen 23:42</div>
+
+    <div class="date-divider"><span>Montag, 3. Juni 2024</span></div>
+    <div class="msg them">
+      <div class="bubble">Vera. Mila hat mich heute komisch angeschaut. So als ob sie was weiß. Hast du ihr irgendwas gesagt?<div class="time-stamp">20:14</div></div>
+    </div>
+    <div class="msg me">
+      <div class="bubble">Nein, natürlich nicht. Mila ist manchmal einfach so. Mach dir keine Gedanken.<div class="time-stamp">20:28</div></div>
+    </div>
+    <div class="msg them">
+      <div class="bubble">Okay. Ich vertrau dir.<div class="time-stamp">20:31</div></div>
+    </div>
+
+    <div class="date-divider"><span>Samstag, 29. Juni 2024</span></div>
+    <div class="msg them">
+      <div class="bubble">Vera, ich liebe dich. Ich weiß dass ich das nicht sagen soll aber ich sag's trotzdem.<div class="time-stamp">23:11</div></div>
+    </div>
+    <div class="msg me">
+      <div class="bubble">Noah. Schlaf jetzt. 🙂<div class="time-stamp">23:28</div></div>
+    </div>
+    <div class="msg them">
+      <div class="bubble">Das ist keine Antwort 😅<div class="time-stamp">23:29</div></div>
+    </div>
+    <div class="msg me">
+      <div class="bubble">Ich weiß. Gute Nacht.<div class="time-stamp">23:31</div></div>
+    </div>
+    <div class="seen">Gesehen 23:32</div>
+
+    <div class="date-divider"><span>Montag, 15. Juli 2024</span></div>
+    <div class="msg them">
+      <div class="bubble">Du wirkst in letzter Zeit so distanziert. Hab ich was falsch gemacht?<div class="time-stamp">21:03</div></div>
+    </div>
+    <div class="msg me">
+      <div class="bubble">Nein. Ich hab gerade viel um die Ohren. Das hat nichts mit dir zu tun.<div class="time-stamp">21:22</div></div>
+    </div>
+    <div class="msg them">
+      <div class="bubble">Vera. Ich bin für dich da. Weißt du das?<div class="time-stamp">21:24</div></div>
+    </div>
+    <div class="msg me">
+      <div class="bubble">Ich weiß. Danke Noah. 🙂<div class="time-stamp">21:35</div></div>
+    </div>
+
+    <div class="date-divider"><span>Freitag, 19. Juli 2024</span></div>
+    <div class="msg them">
+      <div class="bubble">Ich bin im Kino in Rosenheim bis ca. 21 Uhr. Danach frei. Hast du Lust?<div class="time-stamp">16:44</div></div>
+    </div>
+    <div class="msg me">
+      <div class="bubble">Schau mal. Ich geh heut noch joggen, danach sehen wir.<div class="time-stamp">17:02</div></div>
+    </div>
+    <div class="msg them">
+      <div class="bubble">👍 Ich meld mich nachher.<div class="time-stamp">17:03</div></div>
+    </div>
+    <div class="msg them">
+      <div class="bubble">Film war gut 😄 Ich bin draußen. Alles okay bei dir?<div class="time-stamp">21:08</div></div>
+    </div>
+    <div class="msg them">
+      <div class="bubble">Vera?<div class="time-stamp">21:34</div></div>
+    </div>
+    <div class="msg them">
+      <div class="bubble">Ich ruf mal an...<div class="time-stamp">21:51</div></div>
+    </div>
+
+    <div class="sys-msg" style="margin-top:20px; background:#1a0a0a; color:#c87070; border:1px solid rgba(200,80,80,0.2);">
+      🔴 Keine weiteren Nachrichten — 19. Juli 2024
+    </div>
+
+  </div>
+  <div class="input-bar">
+    <span style="font-size:22px;">😊</span>
+    <input class="input-field" placeholder="Nachricht" disabled>
+    <span style="font-size:20px; color:#8696a0;">📎</span>
+    <button class="send-btn">🎤</button>
+  </div>
+</div>
+</body>
+</html>
