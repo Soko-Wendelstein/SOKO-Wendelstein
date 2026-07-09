@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Epilog – Mord an der Mangfall</title>
+<style>
+  html, body {
+    margin: 0;
+    height: 100%;
+    background: #000;
+    color: #f4f4f4;
+    font-family: Georgia, "Times New Roman", serif;
+    overflow: hidden;
+  }
+
+  .screen {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background:
+      radial-gradient(circle at 50% 35%, rgba(255,255,255,0.07), transparent 38%),
+      linear-gradient(to bottom, #050506, #000 62%);
+  }
+
+  .fade-top, .fade-bottom {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 24vh;
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  .fade-top {
+    top: 0;
+    background: linear-gradient(to bottom, #000 30%, rgba(0,0,0,0.78) 55%, transparent);
+  }
+
+  .fade-bottom {
+    bottom: 0;
+    background: linear-gradient(to top, #000 30%, rgba(0,0,0,0.78) 55%, transparent);
+  }
+
+  .intro {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: introFade 8s ease-in-out forwards;
+    z-index: 10;
+    padding: 2rem;
+  }
+
+  .intro h1 {
+    font-size: clamp(1.55rem, 4vw, 3rem);
+    letter-spacing: 0.09em;
+    margin: 0 0 1rem;
+    font-weight: normal;
+  }
+
+  .intro p {
+    font-size: clamp(1rem, 2vw, 1.35rem);
+    color: #cfcfcf;
+    margin: 0.45rem 0;
+    letter-spacing: 0.04em;
+  }
+
+  .credits {
+    position: absolute;
+    width: min(880px, 88vw);
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100vh;
+    animation: scrollText 260s linear 7s forwards;
+    font-size: clamp(1.22rem, 2.35vw, 1.92rem);
+    line-height: 1.78;
+    text-align: center;
+    white-space: pre-line;
+    padding-bottom: 105vh;
+  }
+
+  .credits::first-line {
+    font-size: 1.35em;
+    letter-spacing: 0.12em;
+  }
+
+  .restart {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 30;
+    opacity: 0;
+    pointer-events: none;
+    animation: showRestart 1.8s ease forwards;
+    animation-delay: 262s;
+  }
+
+  .restart button {
+    background: rgba(255,255,255,0.11);
+    color: #f4f4f4;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 999px;
+    padding: 10px 15px;
+    font-family: Arial, sans-serif;
+    font-size: 0.92rem;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+  }
+
+  .restart button:hover {
+    background: rgba(255,255,255,0.2);
+  }
+
+  @keyframes introFade {
+    0%, 55% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+  }
+
+  @keyframes scrollText {
+    from { top: 100vh; }
+    to { top: -720vh; }
+  }
+
+  @keyframes showRestart {
+    to { opacity: 1; pointer-events: auto; }
+  }
+
+  @media (max-width: 650px) {
+    .credits {
+      animation-duration: 290s;
+      line-height: 1.68;
+      font-size: clamp(1.05rem, 4.2vw, 1.35rem);
+    }
+    .restart {
+      right: 12px;
+      bottom: 12px;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="screen">
+  <div class="fade-top"></div>
+  <div class="fade-bottom"></div>
+
+  <section class="intro">
+    <div>
+      <h1>KRIMINALPOLIZEIINSPEKTION ROSENHEIM</h1>
+      <p>Ermittlungsverfahren RM-2024-047</p>
+      <p>Abschlussvermerk</p>
+    </div>
+  </section>
+
+  <main class="credits">DAS URTEIL
+
+Nach Abschluss der Ermittlungen erhob die Staatsanwaltschaft Traunstein Anklage gegen Albert Zimmermann wegen Mordes. Über die Anklage entschied die zuständige Schwurgerichtskammer des Landgerichts Traunstein.
+
+Das Gericht kam zu der Überzeugung, dass Albert Zimmermann Vera Caralis zunächst mit einem Maßkrug bewusstlos schlug und sie anschließend über die Brüstung des Mangfallstegs in die durch das Unwetter stark angeschwollene Mangfall warf, um ihren Tod als tragischen Unfall erscheinen zu lassen.
+
+Gerade dieser zweite, bewusste Tatentschluss war für das Gericht entscheidend. Während ein Totschlag die vorsätzliche Tötung eines Menschen voraussetzt, liegt ein Mord nur dann vor, wenn zusätzlich mindestens ein gesetzlich geregeltes Mordmerkmal erfüllt ist.
+
+Das Gericht sah dieses hier in der Verdeckungsabsicht erfüllt: Albert Zimmermann wollte die vorangegangene Gewalttat verbergen und den Eindruck eines Unglücksfalls erwecken.
+
+Albert Zimmermann wurde deshalb wegen Mordes zu einer lebenslangen Freiheitsstrafe verurteilt.
+
+
+ROBERT CARALIS
+
+Robert Caralis zog sich nach den Ereignissen zunächst vollständig aus der Öffentlichkeit zurück. Der Verlust seiner Frau veränderte sein Leben grundlegend.
+
+Er überwand seine Spielsucht und engagiert sich heute ehrenamtlich in einer Beratungsstelle für suchtkranke Menschen. Als freischaffender Maler verarbeitet er seine Erinnerungen und Gefühle in seinen Bildern.
+
+
+MILA
+
+Mila schloss ihr Journalismusstudium erfolgreich ab. Den Verlust ihrer Stiefmutter verarbeitet sie bis heute gemeinsam mit ihrem Vater in therapeutischer Begleitung.
+
+Ihrer Leidenschaft für den Journalismus ist sie treu geblieben und arbeitet inzwischen für eine überregionale Tageszeitung.
+
+
+JOSIE UND CASPER
+
+Josie blieb auch nach Abschluss der Ermittlungen eine enge Freundin der Familie. Gemeinsam mit ihrem Husky Casper war sie besonders in den ersten schweren Monaten eine wichtige Stütze für Robert und Mila.
+
+Die gemeinsamen Spaziergänge entlang der Mangfall gehören bis heute zu ihrem festen Ritual.
+
+
+TOBIAS BECKER
+
+Tobias Becker wurde vollständig entlastet. Dennoch musste er erfahren, wie schnell ihn seine Vergangenheit wieder einholte.
+
+Mit seiner Becker Bau AG führte er den Familienbetrieb erfolgreich weiter und realisierte zahlreiche Bauprojekte in der Region. Sein Ruf als ehemaliger Hitzkopf blieb zwar bestehen, doch wer ihn heute kennt, weiß, dass aus dem impulsiven jungen Mann längst ein verantwortungsbewusster Unternehmer geworden ist.
+
+
+DR. JOHANNES PHILIPE
+
+Dr. Johannes Philipe gründete gemeinsam mit einem kleinen Team eine Stiftung zum Schutz der Mangfallauen und archäologischer Bodendenkmäler.
+
+Seine Arbeit machte die Region weit über Oberbayern hinaus bekannt.
+
+
+NOAH LOPEZ
+
+Noah Lopez verließ Deutschland kurz nach Abschluss der Ermittlungen. Von Schuldgefühlen belastet, begann er unter neuem Namen ein neues Leben in Spanien, wo er heute ein kleines Café betreibt.
+
+Seine Vergangenheit lässt ihn jedoch bis heute nicht vollständig los.
+
+
+DAS VERMÄCHTNIS
+
+Das ursprünglich geplante Mangfall Resort wurde nach den Ereignissen nicht in seiner vorgesehenen Form verwirklicht.
+
+Nach dem Tod von Vera Caralis übernahm ihr Cousin Nikos Caralis die Leitung der Caralis Resorts. Gemeinsam mit Dr. Johannes Philipe entschied er sich, das bereits im Besitz der Hotelgruppe befindliche Grundstück nicht länger für den Bau eines Wellness-Resorts zu nutzen.
+
+Stattdessen entstand dort das Natur- und Umweltbildungszentrum Mangfall. Das bewusst klein gehaltene Gebäude hält den notwendigen Abstand zur Kelteneiche ein und fügt sich harmonisch in die Landschaft ein.
+
+Schulklassen, Familien und naturinteressierte Besucher erfahren dort heute mehr über die Mangfallauen, die Geschichte der Kelten und den verantwortungsvollen Umgang mit Natur- und Bodendenkmälern.
+
+Eine Idee Veras blieb dennoch erhalten: Geschichte sollte für Menschen erlebbar werden. Zwar nicht mehr unter den Glasböden eines luxuriösen Wellnessbereichs, sondern als Herzstück eines Ortes, der Wissen vermittelt und kommende Generationen für Natur und Geschichte begeistert.
+
+
+ERMITTLUNGSVERFAHREN
+RM-2024-047
+
+GESCHLOSSEN</main>
+
+  <div class="restart">
+    <button onclick="location.reload()">Epilog neu starten</button>
+  </div>
+</div>
+</body>
+</html>
