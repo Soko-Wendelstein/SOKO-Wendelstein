@@ -430,6 +430,146 @@ body.admin-mode .admin-badge{display:block;}
   .postfach-container .meta-date{text-align:left;max-width:none;}
 }
 
+
+/* ===== FINALER FALLABSCHLUSS ===== */
+.final-choice-card{
+  margin-top:18px;
+  background:#ffffff;
+  border:1px solid #d7e0ea;
+  border-radius:10px;
+  padding:22px;
+  box-shadow:0 8px 24px rgba(40,70,110,.06);
+}
+.final-choice-kicker{
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:#8a98aa;
+  font-weight:700;
+  margin-bottom:6px;
+}
+.final-choice-card h2{
+  font-size:19px;
+  color:#172033;
+  margin-bottom:8px;
+}
+.final-choice-card p{
+  color:#66758a;
+  line-height:1.55;
+  margin-bottom:16px;
+}
+.final-suspect-list{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+}
+.final-suspect-option{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 12px;
+  border:1px solid #d7e0ea;
+  border-radius:7px;
+  background:#f8fbff;
+  color:#243244;
+  cursor:pointer;
+  transition:.15s ease;
+}
+.final-suspect-option:hover{
+  background:#eef6ff;
+  border-color:#9fc3ee;
+}
+.final-suspect-option input{
+  width:18px;
+  height:18px;
+  accent-color:#2f78d4;
+  flex-shrink:0;
+}
+.final-choice-warning{
+  min-height:20px;
+  margin-top:10px;
+  color:#b05a4a;
+  font-size:13px;
+  font-weight:600;
+}
+.final-close-btn{
+  margin-top:8px;
+  background:#172033;
+  color:#fff;
+  border:none;
+  border-radius:7px;
+  padding:11px 16px;
+  font-size:14px;
+  font-weight:700;
+  cursor:pointer;
+  font-family:inherit;
+}
+.final-close-btn:hover{background:#29364f;}
+.final-evaluation{
+  display:none;
+  text-align:center;
+  padding:10px 0 2px;
+}
+.final-evaluation h2{
+  color:#172033;
+  margin-bottom:18px;
+}
+.final-eval-line{
+  margin:11px 0;
+  color:#66758a;
+  opacity:.55;
+  transition:.2s ease;
+}
+.final-eval-line.done{
+  color:#2d7a4f;
+  opacity:1;
+  font-weight:700;
+}
+.final-progress-track{
+  width:100%;
+  height:12px;
+  margin-top:22px;
+  overflow:hidden;
+  background:#e3ebf3;
+  border-radius:999px;
+}
+.final-progress-bar{
+  width:0;
+  height:100%;
+  background:linear-gradient(90deg,#2f78d4,#172033);
+  border-radius:999px;
+  transition:width .09s linear;
+}
+.final-progress-percent{
+  margin-top:8px;
+  color:#66758a;
+  font-size:12px;
+  font-weight:700;
+}
+.final-archive-release{
+  display:none;
+  text-align:center;
+  padding:12px 0 4px;
+}
+.final-archive-release h2{
+  color:#172033;
+  margin-bottom:8px;
+}
+.final-archive-link{
+  display:inline-block;
+  margin-top:12px;
+  padding:12px 18px;
+  border-radius:7px;
+  background:#172033;
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+}
+.final-archive-link:hover{background:#29364f;}
+@media(max-width:720px){
+  .final-suspect-list{grid-template-columns:1fr;}
+}
+
 </style>
 </head>
 <body>
@@ -440,7 +580,7 @@ body.admin-mode .admin-badge{display:block;}
   <div class="hdr-emblem">🔵</div>
   <div>
     <div class="hdr-name">SOKO Wendelstein</div>
-    <div class="hdr-sub">Bayerisches Landeskriminalamt · Ermittlungsportal</div>
+    <div class="hdr-sub">Ermittlungsportal</div>
   </div>
   <div class="hdr-sep"></div>
   <div class="hdr-case">Az. <span>2024-WS-0719</span></div>
@@ -2215,6 +2355,47 @@ Anhang: Foto_Bauhuber_Simone.png
         </div>
       </div>
 
+
+      <div class="final-choice-card" id="finalChoiceCard">
+        <div id="finalChoiceStep">
+          <div class="final-choice-kicker">SOKO Wendelstein</div>
+          <h2>Wer hat Vera Caralis ermordet?</h2>
+          <p>Bitte treffen Sie nun Ihre endgültige Entscheidung. Nach Abschluss der Ermittlungen kann Ihre Auswahl nicht mehr geändert werden.</p>
+
+          <div class="final-suspect-list">
+            <label class="final-suspect-option"><input type="radio" name="finalSuspect" value="Robert Caralis-Brandt"><span>Robert Caralis-Brandt</span></label>
+            <label class="final-suspect-option"><input type="radio" name="finalSuspect" value="Dr. Johannes Philipe"><span>Dr. Johannes Philipe</span></label>
+            <label class="final-suspect-option"><input type="radio" name="finalSuspect" value="Tobias Becker"><span>Tobias Becker</span></label>
+            <label class="final-suspect-option"><input type="radio" name="finalSuspect" value="Mila Brandt"><span>Mila Brandt</span></label>
+            <label class="final-suspect-option"><input type="radio" name="finalSuspect" value="Albert Bertl Zimmermann"><span>Albert „Bertl“ Zimmermann</span></label>
+            <label class="final-suspect-option"><input type="radio" name="finalSuspect" value="Noah Lopez"><span>Noah Lopez</span></label>
+            <label class="final-suspect-option"><input type="radio" name="finalSuspect" value="Josie Wilson"><span>Josie Wilson</span></label>
+            <label class="final-suspect-option"><input type="radio" name="finalSuspect" value="Pamela Brandt-Jackson"><span>Pamela Brandt-Jackson</span></label>
+          </div>
+
+          <div class="final-choice-warning" id="finalChoiceWarning"></div>
+          <button class="final-close-btn" type="button" onclick="completeFinalInvestigation()">🔎 Ermittlungen abschließen</button>
+        </div>
+
+        <div class="final-evaluation" id="finalEvaluation">
+          <div class="final-choice-kicker">SOKO Wendelstein</div>
+          <h2>Auswertung Ihrer Ermittlungsergebnisse …</h2>
+          <div class="final-eval-line" id="finalEval1">⏳ Beweismittel werden überprüft …</div>
+          <div class="final-eval-line" id="finalEval2">⏳ Zeugenaussagen werden abgeglichen …</div>
+          <div class="final-eval-line" id="finalEval3">⏳ Bewegungsdaten werden rekonstruiert …</div>
+          <div class="final-eval-line" id="finalEval4">⏳ Fallrekonstruktion wird erstellt …</div>
+          <div class="final-progress-track"><div class="final-progress-bar" id="finalProgressBar"></div></div>
+          <div class="final-progress-percent" id="finalProgressPercent">0 %</div>
+        </div>
+
+        <div class="final-archive-release" id="finalArchiveRelease">
+          <div class="final-choice-kicker">SOKO Wendelstein</div>
+          <h2>Ermittlungen abgeschlossen</h2>
+          <p>Die offizielle Abschlussakte wurde freigegeben.</p>
+          <a class="final-archive-link" href="abschlussakte.html">📂 Abschlussakte öffnen</a>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -2474,6 +2655,60 @@ function submitSuspect(){
     show("finale");
   });
 }
+
+function completeFinalInvestigation(){
+  const selected = document.querySelector('input[name="finalSuspect"]:checked');
+  const warning = document.getElementById("finalChoiceWarning");
+
+  if(!selected){
+    if(warning) warning.textContent = "Bitte wählen Sie eine Person aus.";
+    return;
+  }
+
+  if(warning) warning.textContent = "";
+
+  const choice = document.getElementById("finalChoiceStep");
+  const evaluation = document.getElementById("finalEvaluation");
+  const release = document.getElementById("finalArchiveRelease");
+  const bar = document.getElementById("finalProgressBar");
+  const percent = document.getElementById("finalProgressPercent");
+  const lines = [
+    document.getElementById("finalEval1"),
+    document.getElementById("finalEval2"),
+    document.getElementById("finalEval3"),
+    document.getElementById("finalEval4")
+  ];
+
+  choice.style.display = "none";
+  evaluation.style.display = "block";
+  release.style.display = "none";
+  bar.style.width = "0%";
+  percent.textContent = "0 %";
+  lines.forEach(function(line){
+    if(line) line.classList.remove("done");
+  });
+
+  let progress = 0;
+  const timer = setInterval(function(){
+    progress += 2;
+    bar.style.width = progress + "%";
+    percent.textContent = progress + " %";
+
+    if(progress >= 20 && lines[0]) lines[0].classList.add("done");
+    if(progress >= 45 && lines[1]) lines[1].classList.add("done");
+    if(progress >= 70 && lines[2]) lines[2].classList.add("done");
+    if(progress >= 90 && lines[3]) lines[3].classList.add("done");
+
+    if(progress >= 100){
+      clearInterval(timer);
+      setTimeout(function(){
+        evaluation.style.display = "none";
+        release.style.display = "block";
+      }, 350);
+    }
+  }, 100);
+}
+
 function filterPartialEvidence(stage){
   // Videos: vor finaler Freigabe nur Volksfest sichtbar
   const videos = document.getElementById("panel-videos");
