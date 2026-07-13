@@ -2,158 +2,29 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Epilog – Mord an der Mangfall</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Epilog – SOKO Wendelstein</title>
 <style>
-  html, body {
-    margin: 0;
-    height: 100%;
-    background: #000;
-    color: #f4f4f4;
-    font-family: Georgia, "Times New Roman", serif;
-    overflow: hidden;
-  }
-
-  .screen {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    background:
-      radial-gradient(circle at 50% 35%, rgba(255,255,255,0.07), transparent 38%),
-      linear-gradient(to bottom, #050506, #000 62%);
-  }
-
-  .fade-top, .fade-bottom {
-    position: fixed;
-    left: 0;
-    right: 0;
-    height: 24vh;
-    z-index: 5;
-    pointer-events: none;
-  }
-
-  .fade-top {
-    top: 0;
-    background: linear-gradient(to bottom, #000 30%, rgba(0,0,0,0.78) 55%, transparent);
-  }
-
-  .fade-bottom {
-    bottom: 0;
-    background: linear-gradient(to top, #000 30%, rgba(0,0,0,0.78) 55%, transparent);
-  }
-
-  .intro {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    animation: introFade 8s ease-in-out forwards;
-    z-index: 10;
-    padding: 2rem;
-  }
-
-  .intro h1 {
-    font-size: clamp(1.55rem, 4vw, 3rem);
-    letter-spacing: 0.09em;
-    margin: 0 0 1rem;
-    font-weight: normal;
-  }
-
-  .intro p {
-    font-size: clamp(1rem, 2vw, 1.35rem);
-    color: #cfcfcf;
-    margin: 0.45rem 0;
-    letter-spacing: 0.04em;
-  }
-
-  .credits {
-    position: absolute;
-    width: min(880px, 88vw);
-    left: 50%;
-    transform: translateX(-50%);
-    top: 100vh;
-    animation: scrollText 260s linear 7s forwards;
-    font-size: clamp(1.22rem, 2.35vw, 1.92rem);
-    line-height: 1.78;
-    text-align: center;
-    white-space: pre-line;
-    padding-bottom: 105vh;
-  }
-
-  .credits::first-line {
-    font-size: 1.35em;
-    letter-spacing: 0.12em;
-  }
-
-  .restart {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 30;
-    opacity: 0;
-    pointer-events: none;
-    animation: showRestart 1.8s ease forwards;
-    animation-delay: 262s;
-  }
-
-  .restart button {
-    background: rgba(255,255,255,0.11);
-    color: #f4f4f4;
-    border: 1px solid rgba(255,255,255,0.35);
-    border-radius: 999px;
-    padding: 10px 15px;
-    font-family: Arial, sans-serif;
-    font-size: 0.92rem;
-    cursor: pointer;
-    backdrop-filter: blur(5px);
-  }
-
-  .restart button:hover {
-    background: rgba(255,255,255,0.2);
-  }
-
-  @keyframes introFade {
-    0%, 55% { opacity: 1; }
-    100% { opacity: 0; visibility: hidden; }
-  }
-
-  @keyframes scrollText {
-    from { top: 100vh; }
-    to { top: -720vh; }
-  }
-
-  @keyframes showRestart {
-    to { opacity: 1; pointer-events: auto; }
-  }
-
-  @media (max-width: 650px) {
-    .credits {
-      animation-duration: 290s;
-      line-height: 1.68;
-      font-size: clamp(1.05rem, 4.2vw, 1.35rem);
-    }
-    .restart {
-      right: 12px;
-      bottom: 12px;
-    }
-  }
+html,body{margin:0;height:100%;background:#000;color:#f3f3f3;overflow:hidden;font-family:"Courier New",Courier,monospace}
+.screen{position:relative;width:100vw;height:100vh;background:#000}
+.intro{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:10;animation:fadeIntro .7s ease 3s forwards}
+.intro h1{margin:0;font-size:clamp(2.2rem,5vw,4.4rem);letter-spacing:.08em}
+.credits{position:absolute;left:50%;top:100vh;transform:translateX(-50%);width:min(920px,84vw);padding-bottom:115vh;white-space:pre-line;text-align:left;font-size:clamp(1.1rem,2vw,1.65rem);line-height:1.68;animation:scroll 175s linear 3.25s forwards}
+.fade-top,.fade-bottom{position:fixed;left:0;right:0;height:20vh;z-index:5;pointer-events:none}
+.fade-top{top:0;background:linear-gradient(to bottom,#000 34%,rgba(0,0,0,.82) 58%,transparent)}
+.fade-bottom{bottom:0;background:linear-gradient(to top,#000 34%,rgba(0,0,0,.82) 58%,transparent)}
+.restart{position:fixed;right:18px;bottom:18px;z-index:20;opacity:0;pointer-events:none;animation:showRestart 1s ease 179s forwards}
+.restart button{border:1px solid rgba(255,255,255,.32);border-radius:999px;background:rgba(255,255,255,.08);color:#fff;padding:9px 14px;font:14px "Courier New",monospace;cursor:pointer}
+@keyframes fadeIntro{to{opacity:0;visibility:hidden}}
+@keyframes scroll{from{top:100vh}to{top:-650vh}}
+@keyframes showRestart{to{opacity:1;pointer-events:auto}}
+@media(max-width:650px){.credits{width:86vw;font-size:clamp(1rem,4vw,1.25rem);line-height:1.58;animation-duration:195s}.restart{animation-delay:199s}}
 </style>
 </head>
 <body>
 <div class="screen">
-  <div class="fade-top"></div>
-  <div class="fade-bottom"></div>
-
-  <section class="intro">
-    <div>
-      <h1>KRIMINALPOLIZEIINSPEKTION ROSENHEIM</h1>
-      <p>Ermittlungsverfahren RM-2024-047</p>
-      <p>Abschlussvermerk</p>
-    </div>
-  </section>
-
+  <div class="fade-top"></div><div class="fade-bottom"></div>
+  <section class="intro"><h1>Epilog</h1></section>
   <main class="credits">DAS URTEIL
 
 Nach Abschluss der Ermittlungen erhob die Staatsanwaltschaft Traunstein Anklage gegen Albert Zimmermann wegen Mordes. Über die Anklage entschied die zuständige Schwurgerichtskammer des Landgerichts Traunstein.
@@ -167,32 +38,24 @@ Das Gericht sah dieses hier in der Verdeckungsabsicht erfüllt: Albert Zimmerman
 Albert Zimmermann wurde deshalb wegen Mordes zu einer lebenslangen Freiheitsstrafe verurteilt.
 
 
-ROBERT CARALIS
+ROBERT CARALIS-BRANDT
 
-Robert Caralis zog sich nach den Ereignissen zunächst vollständig aus der Öffentlichkeit zurück. Der Verlust seiner Frau veränderte sein Leben grundlegend.
-
-Er überwand seine Spielsucht und engagiert sich heute ehrenamtlich in einer Beratungsstelle für suchtkranke Menschen. Als freischaffender Maler verarbeitet er seine Erinnerungen und Gefühle in seinen Bildern.
+Nach Veras Tod kehrte Robert Caralis-Brandt seinem bisherigen Leben zwischen München und Bruckmühl den Rücken. Heute lebt er zurückgezogen am Tegernsee. Ins Mangfalltal ist er seitdem nicht mehr zurückgekehrt.
 
 
-MILA
+MILA BRANDT
 
-Mila schloss ihr Journalismusstudium erfolgreich ab. Den Verlust ihrer Stiefmutter verarbeitet sie bis heute gemeinsam mit ihrem Vater in therapeutischer Begleitung.
-
-Ihrer Leidenschaft für den Journalismus ist sie treu geblieben und arbeitet inzwischen für eine überregionale Tageszeitung.
+Mila schloss ihr Journalismusstudium erfolgreich ab und arbeitet heute für eine überregionale Tageszeitung. Ihr Anspruch, genau hinzusehen und unbequeme Fragen zu stellen, wurde durch die Ereignisse rund um den Tod ihrer Stiefmutter nachhaltig geprägt.
 
 
 JOSIE UND CASPER
 
-Josie blieb auch nach Abschluss der Ermittlungen eine enge Freundin der Familie. Gemeinsam mit ihrem Husky Casper war sie besonders in den ersten schweren Monaten eine wichtige Stütze für Robert und Mila.
-
-Die gemeinsamen Spaziergänge entlang der Mangfall gehören bis heute zu ihrem festen Ritual.
+Josie blieb der Familie Caralis auch nach Abschluss der Ermittlungen eng verbunden. Gemeinsam mit ihrem Husky Casper gehören Spaziergänge entlang der Mangfall bis heute zu ihrem festen Alltag.
 
 
 TOBIAS BECKER
 
-Tobias Becker wurde vollständig entlastet. Dennoch musste er erfahren, wie schnell ihn seine Vergangenheit wieder einholte.
-
-Mit seiner Becker Bau AG führte er den Familienbetrieb erfolgreich weiter und realisierte zahlreiche Bauprojekte in der Region. Sein Ruf als ehemaliger Hitzkopf blieb zwar bestehen, doch wer ihn heute kennt, weiß, dass aus dem impulsiven jungen Mann längst ein verantwortungsbewusster Unternehmer geworden ist.
+Mit seiner Becker Bau AG führte Tobias Becker den Familienbetrieb erfolgreich weiter und realisierte zahlreiche Bauprojekte in der Region. Aus dem einstigen Hitzkopf wurde ein verantwortungsbewusster Unternehmer, der sich heute weit über die Grenzen des Mangfalltals hinaus großes Ansehen erworben hat.
 
 
 DR. JOHANNES PHILIPE
@@ -204,9 +67,7 @@ Seine Arbeit machte die Region weit über Oberbayern hinaus bekannt.
 
 NOAH LOPEZ
 
-Noah Lopez verließ Deutschland kurz nach Abschluss der Ermittlungen. Von Schuldgefühlen belastet, begann er unter neuem Namen ein neues Leben in Spanien, wo er heute ein kleines Café betreibt.
-
-Seine Vergangenheit lässt ihn jedoch bis heute nicht vollständig los.
+Noah Lopez verließ Deutschland kurz nach Abschluss der Ermittlungen und begann in Spanien ein neues Leben. Heute betreibt er dort ein kleines Strandcafé.
 
 
 DAS VERMÄCHTNIS
@@ -226,10 +87,7 @@ ERMITTLUNGSVERFAHREN
 RM-2024-047
 
 GESCHLOSSEN</main>
-
-  <div class="restart">
-    <button onclick="location.reload()">Epilog neu starten</button>
-  </div>
+  <div class="restart"><button onclick="location.reload()">Epilog neu starten</button></div>
 </div>
 </body>
 </html>
